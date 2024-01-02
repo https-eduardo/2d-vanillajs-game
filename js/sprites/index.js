@@ -46,27 +46,16 @@ export class Sprite extends Graphic {
 
   async jump(speed) {
     if (this.#state === 'jumping' || !this.#jumpEnabled) return;
-    this.#updateState('jumping')
+    this.#updateState('jumping');
+
     const intervalUp = setInterval(() => {
       const { top } = this.#getSpriteOffset();
       this.#spriteEl.style.top = `${top - speed}px`;
-    }, speed * 5)
+    }, speed * 2.5)
 
     await delay(speed * 20);
 
     clearInterval(intervalUp);
-
-    // Time in top
-    await delay(speed * 10);
-
-    const intervalDown = setInterval(() => {
-      const { top } = this.#getSpriteOffset();
-      this.#spriteEl.style.top = `${top + speed}px`;
-    }, speed * 5)
-
-    await delay(speed * 20);
-
-    clearInterval(intervalDown);
 
     this.#updateState('idle')
   }
@@ -102,6 +91,10 @@ export class Sprite extends Graphic {
         this.changeSpriteFrame('jump_2')
         break;
     }
+  }
+
+  get element() {
+    return this.#spriteEl;
   }
 
   #getSpriteOffset() {
