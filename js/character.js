@@ -2,6 +2,7 @@ import { keyboardMapper } from "./keyboard.js";
 import { delay } from "./utils/promises.js";
 import { Gravity } from "./gravity.js";
 import { Creature } from "./sprites/creature.js";
+import { Collision } from "./collision.js";
 
 export class Character extends Creature {
   SPEED = 10;
@@ -23,5 +24,6 @@ export class Character extends Creature {
       await delay(1);
 
     Gravity.addToElement(this.element);
+    Collision.addToElement(this.element, true);
   }
 }

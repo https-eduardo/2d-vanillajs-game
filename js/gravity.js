@@ -1,6 +1,7 @@
 export class Gravity {
   static #GRAVITY = 0.02;
   static #gravitySpeed = 0;
+  static #GROUND_HEIGHT = 25;
 
   static addToElement(element) {
     setInterval(() => {
@@ -18,7 +19,7 @@ export class Gravity {
   }
 
   static #isInGround(element) {
-    const ground = window.innerHeight - element.height;
+    const ground = window.innerHeight - this.#GROUND_HEIGHT - element.height;
     const { top } = this.#getOffset(element);
 
     if (top < ground)

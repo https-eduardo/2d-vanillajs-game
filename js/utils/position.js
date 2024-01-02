@@ -1,7 +1,9 @@
 export const getElementOffset = (element) => {
-  const rect = element.getBoundingClientRect();
+  const { top, left, width, height } = element.getBoundingClientRect();
   return {
-    left: rect.left + window.scrollX,
-    top: rect.top + window.scrollY
+    left: left + window.scrollX,
+    top: top + window.scrollY,
+    width,
+    height
   };
 }
