@@ -1,9 +1,9 @@
-import { Sprite } from "./sprites/index.js";
 import { keyboardMapper } from "./keyboard.js";
 import { delay } from "./utils/promises.js";
 import { Gravity } from "./gravity.js";
+import { Creature } from "./sprites/creature.js";
 
-export class Character extends Sprite {
+export class Character extends Creature {
   SPEED = 10;
   constructor() {
     super('../assets/sprites/character');
