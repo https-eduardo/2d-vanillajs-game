@@ -1,3 +1,6 @@
 export const genId = () => {
-  return Date.now().toString().substring(4)
+  return String(
+    Date.now().toString(32) +
+    Math.random().toString(16)
+  ).replace(/\./g, '')
 }
