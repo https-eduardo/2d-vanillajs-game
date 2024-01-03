@@ -15,7 +15,7 @@ Just a simple 2D game in early development. Built with Javascript without any li
 - [ ] Character attack
 - [ ] Character death (life system)
 - [x] Keyboard mapper (might needs improvements)
-- [ ] Collision
+- [x] Collision
 - [ ] Positioning
 - [ ] Ambient (objects, background, etc)
 - [ ] Enemies
