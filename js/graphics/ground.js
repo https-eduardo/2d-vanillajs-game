@@ -16,7 +16,7 @@ export class Ground extends Graphic {
     groundEl.style.width = '100%';
     groundEl.style.bottom = '0';
 
-    Collision.addToElement(groundEl);
+    Collision.addToElement(groundEl, 'ground');
 
     return groundEl;
   }
